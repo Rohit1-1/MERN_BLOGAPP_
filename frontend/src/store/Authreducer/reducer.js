@@ -62,6 +62,7 @@ export const reducer=(state=initialState,{type,payload})=>{
         }
     }
     case(LOGIN_FAILURE):{
+        removeData('isAuth')
         return{
             ...state,
             isLoading:false,

@@ -21,7 +21,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { Link as NavigateLink } from "react-router-dom";
-import { Signin } from "../store/Authreducer/action";
+import { Signin, Signin_failure } from "../store/Authreducer/action";
   
   export default function SigninCard() {
     const [showPassword, setShowPassword] = useState(false);
@@ -66,6 +66,7 @@ import { Signin } from "../store/Authreducer/action";
                 duration: 5000,
                 isClosable: true,
               })
+              dispatch(Signin_failure())
             }
           })
       }
